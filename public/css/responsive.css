@@ -1,0 +1,340 @@
+@media (min-width: 1200px) {
+    #sidebarMenu {
+        max-width: 300px;
+    }
+    /* .alumni-wrapper .col-9 {
+        margin-left: 20px;
+    } */
+    .userprofile {
+        margin-top: 50px;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .mob-full-col .box {
+        min-height: 120px !important;
+        padding: 0 30px !important;
+    }
+}
+
+
+@media (max-width: 991px) {
+    #sidebarMenu {
+        position: fixed;
+        top: 56px;
+        left: 0;
+        z-index: 1050;
+        width: 320px;
+        background: #fff;
+        transition: all 0.3s ease;
+        height: calc(100vh - 56px);
+        overflow-y: auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .mobspace {
+        width: auto !important;
+        padding: 0 !important;
+    }
+
+        .mobspace #sidebarMenu {
+            margin: 0 !important;
+        }
+
+    .jobs_item_outer {
+        margin-right: 0 !important;
+    }
+
+    .logo-w {
+        max-width: 200px !important;
+    }
+
+    #sidebarMenu.collapse:not(.show) {
+        left: -250px;
+    }
+
+    .job-box {
+        height: auto !important;
+        padding: 30px 20px !important;
+    }
+
+    .alumni_list {
+        margin-bottom: 30px;
+    }
+
+    .mob-full-col .col-md-5 {
+        width: 100%;
+    }
+
+    .mob-full-col .col-md-5 .login_page_banner {
+        display: none;
+    }
+
+    .mob-full-col .box {
+        min-height: 100px !important;
+        padding: 50px !important;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 991px) {
+    .topbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        text-align: center;
+    }
+
+        .topbar .search-box {
+            max-width: 100%;
+            width: 100%;
+            margin: 0 !important;
+        }
+
+        .topbar .d-flex.align-items-center.mb-2.mb-md-0,
+        .topbar .d-flex.align-items-center.gap-3.flex-shrink-0 {
+            justify-content: center;
+        }
+
+        .topbar img {
+            width: 28px;
+            height: auto;
+        }
+
+        .topbar span {
+            font-size: 13px;
+        }
+
+    .sidebar {
+        border-radius: 0;
+    }
+
+    .logout-area {
+        /*    position: fixed;*/
+        bottom: 10px;
+        width: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    .topbar {
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .register-boxes {
+        grid-template-columns: 1fr;
+    }
+
+    .otp-inputs input {
+        width: 40px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 16px;
+    }
+
+    .search-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .job-box {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .job_listing .header-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .job_listing .header-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .job_listing .search-box {
+        width: 100%;
+    }
+
+    .job_listing .action-buttons {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-achievements-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px;
+    }
+}
+
+
+@media screen and (min-width: 1200px) {
+    #sidebarMenu {
+        max-width: 340px;
+        height: 100vh;
+        position: fixed;
+        width: 340px;
+    }
+
+    .logout-area {
+        position: absolute;
+        bottom: 0;
+    }
+    /* .alumni-wrapper .col-9 {
+      margin-left: 20px;
+  } */
+    .userprofile {
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    #sidebarMenu {
+        position: fixed;
+        top: 56px;
+        left: 0;
+        z-index: 1050;
+        width: 250px;
+        background: #fff;
+        transition: all 0.3s ease;
+        height: calc(100vh - 56px);
+        overflow-y: auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .logo-w {
+        max-width: 200px !important;
+    }
+
+    #sidebarMenu.collapse:not(.show) {
+        left: -320px;
+    }
+
+    .logout-area {
+        /*      position: fixed;*/
+        bottom: -10px;
+        left: -100px;
+        right: 0;
+        top: auto;
+        width: auto !important;
+    }
+
+    body {
+        background: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        border-radius: 0;
+    }
+}
+
+
+@media screen and (max-width: 991px) {
+    .topbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        text-align: center;
+    }
+
+        .topbar .search-box {
+            max-width: 100%;
+            width: 100%;
+            margin: 0 !important;
+        }
+
+        .topbar .d-flex.align-items-center.mb-2.mb-md-0,
+        .topbar .d-flex.align-items-center.gap-3.flex-shrink-0 {
+            justify-content: center;
+        }
+
+        .topbar img {
+            width: 28px;
+            height: auto;
+        }
+
+        .topbar span {
+            font-size: 13px;
+        }
+
+    .sidebar {
+        border-radius: 0;
+    }
+
+    .logout-area {
+        /*      position: fixed;*/
+        bottom: 10px;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .topbar {
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+
+/* ================= HUB REGISTER RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    .hub-wrapper {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 20px;
+    }
+
+        .hub-wrapper .card,
+        .hub-wrapper .center-circle {
+            position: static;
+            width: 100%;
+            height: auto;
+            min-height: 120px;
+            border-radius: 24px;
+            box-shadow: none;
+        }
+
+            .hub-wrapper .card::after {
+                display: none; /* remove curves on mobile */
+            }
+
+        .hub-wrapper .center-circle {
+            order: -1;
+            border-radius: 24px;
+            background: #FFDCDC;
+        }
+}

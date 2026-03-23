@@ -1,0 +1,432 @@
+﻿.profile-page {
+    max-width: 420px;
+    margin: 0 auto;
+    height: 100vh;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    position: relative;
+}
+
+.profile-avatar {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.profile-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 24px;
+    border-top: 1px solid #e3e3e3;
+    font-size: 0.95rem;
+}
+
+    .profile-item:last-child {
+        border-bottom: 1px solid #e3e3e3;
+    }
+
+.profile-bottom-nav {
+    background-color: #022b2f;
+    padding: 10px 15px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    color: #ffffff;
+}
+
+.nav-icon-btn {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.3rem;
+}
+
+.profile-tab-active {
+    background-color: #ffffff;
+    color: #022b2f;
+    border-radius: 24px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 0.9rem;
+}
+
+/* Mobile-style profile card (mobile-first, narrow center) */
+.mobile-profile {
+    max-width: 420px;
+    margin: 24px auto;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    color: #0b2b2d;
+}
+
+/* header */
+.mobile-header {
+    padding: 10px 12px;
+    background: #fff;
+    border-radius: 12px;
+    align-items: center;
+    box-shadow: none;
+    margin-bottom: 12px;
+}
+.btn-icon {
+    background: transparent;
+    border: none;
+    font-size: 1.1rem;
+    color: #0b2b2d;
+}
+.btn-back {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f3f3f3;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* main card area */
+.mobile-card {
+    background: #fff;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(12,12,12,0.06);
+}
+
+/* avatar */
+.avatar-wrap {
+    position: relative;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+.avatar-container {
+    position: relative;
+    display: inline-block;
+}
+.avatar-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: inline-block;
+    border: 6px solid #fff;
+    box-shadow: 0 6px 18px rgba(3,28,28,0.08);
+}
+
+/* camera button: placed bottom-right of avatar */
+.camera-btn {
+    position: absolute;
+    right: -6px;
+    bottom: -6px;
+    width: 46px;
+    height: 46px;
+    background: #093433;
+    color: #fff;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 4px solid #fff;
+    box-shadow: 0 6px 14px rgba(3,28,28,0.12);
+    font-size: 1.05rem;
+}
+
+/* focus / keyboard accessibility */
+.camera-btn:focus,
+.camera-btn:active {
+    outline: 3px solid rgba(9,52,51,0.12);
+}
+
+/* form inputs */
+.input-rounded {
+    border-radius: 28px;
+    padding: 12px 16px;
+    border: 1px solid #ececec;
+    background: #fff;
+    box-shadow: none;
+    height: auto;
+}
+
+/* match select and date input to pill style */
+.form-select.input-rounded,
+input[type="date"].input-rounded {
+    border-radius: 28px;
+    padding: 10px 16px;
+    height: auto;
+    border: 1px solid #ececec;
+    background: #fff;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* show calendar icon spacing on supported browsers */
+input[type="date"].input-rounded::-webkit-calendar-picker-indicator {
+    opacity: 0.8;
+    filter: invert(0.1);
+}
+
+/* make select dropdown arrow subtler */
+.form-select.input-rounded {
+    background-image: linear-gradient(45deg, transparent 50%, rgba(0,0,0,0.25) 50%), linear-gradient(135deg, rgba(0,0,0,0.25) 50%, transparent 50%);
+    background-position: calc(100% - 18px) calc(1em + 2px), calc(100% - 13px) calc(1em + 2px);
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+}
+
+/* section titles */
+.section-title {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #0b2b2d;
+}
+
+/* action icons on sections */
+.section-actions .btn-icon {
+    color: #0b2b2d;
+    opacity: 0.85;
+}
+
+/* Save button */
+.btn-save {
+    background: #093433;
+    color: #fff;
+    border-radius: 28px;
+    padding: 12px 22px;
+    border: none;
+    font-weight: 600;
+    box-shadow: 0 6px 18px rgba(9,52,51,0.18);
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* container that allows fixed/anchored save behavior on small screens */
+.save-wrap {
+    margin-top: 8px;
+}
+
+/* small helpers */
+.profile-form .form-label.small {
+    font-size: 0.82rem;
+    color: #333;
+    margin-bottom: 6px;
+}
+hr {
+    border: 0;
+    height: 1px;
+    background: #000000;
+    margin: 16px 0;
+}
+
+/* responsive small width behaviour */
+@media (max-width: 480px) {
+    .mobile-profile {
+        margin: 8px;
+    }
+    .avatar-img { width: 100px; height: 100px; }
+    .camera-btn { width: 44px; height: 44px; right: -6px; bottom: -6px; }
+
+    /* Fixed, centered save button with safe spacing */
+    .save-wrap {
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 18px;
+        width: calc(100% - 48px);
+        max-width: 420px;
+        z-index: 1200;
+        padding: 6px 0;
+        background: transparent;
+    }
+    .btn-save {
+        width: 100%;
+        max-width: none;
+        border-radius: 28px;
+        padding: 12px 0;
+    }
+
+    /* add extra bottom padding to main so fixed save doesn't cover form inputs */
+    main.mobile-card { padding-bottom: 120px; }
+}
+
+/* Larger screens: keep save button centered and not fixed */
+@media (min-width: 481px) {
+    .save-wrap { margin-top: 18px; position: static; }
+    main.mobile-card { padding-bottom: 28px; }
+}
+
+/* --- Existing desktop/web overrides --- */
+
+/* Wrapper for page spacing */
+.profile-page-wrapper {
+    padding: 28px 12px;
+}
+
+/* Desktop / large layout overrides */
+@media (min-width: 992px) {
+    .web-profile {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 8px 30px rgba(10,10,10,0.05);
+        display: block;
+    }
+
+    /* Sidebar */
+    .sidebar-col {
+        border-right: 1px solid #f0f0f0;
+        padding-right: 28px;
+    }
+
+    .avatar-container-lg {
+        position: relative;
+        display: inline-block;
+        margin-top: 6px;
+    }
+
+    .avatar-img-lg {
+        width: 160px;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 8px solid #fff;
+        box-shadow: 0 10px 28px rgba(3,28,28,0.08);
+        display: block;
+        margin: 0 auto;
+    }
+
+    .camera-btn-lg {
+        position: absolute;
+        right: 4px;
+        bottom: 4px;
+        width: 52px;
+        height: 52px;
+        background: #093433;
+        color: #fff;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: 4px solid #fff;
+        box-shadow: 0 8px 20px rgba(3,28,28,0.12);
+        font-size: 1.05rem;
+    }
+
+    .profile-stats { margin-top: 18px; gap: 12px; }
+    .profile-stats .stat { flex: 1; }
+
+    .profile-actions .list-group-item {
+        border: none;
+        padding: 10px 12px;
+        border-radius: 8px;
+    }
+
+    /* Form column spacing */
+    .form-col { padding-left: 28px; }
+
+    /* Inputs: keep pill style but adjust width */
+    .input-rounded {
+        border-radius: 999px;
+        padding: 12px 18px;
+    }
+
+    /* Desktop save button — right aligned and not full width */
+    .btn-save-desktop {
+        background: #093433;
+        color: #fff;
+        border-radius: 999px;
+        padding: 10px 22px;
+        border: none;
+        font-weight: 600;
+        box-shadow: 0 8px 22px rgba(9,52,51,0.14);
+    }
+
+    /* Slightly larger section titles on desktop */
+    .section-title {
+        font-size: 1.02rem;
+    }
+
+    /* Form layout tweaks on very wide screens */
+    @media (min-width: 1200px) {
+        .web-profile { padding: 36px; }
+        .avatar-img-lg { width: 180px; height: 180px; }
+    }
+}
+
+/* --- New styles: page title + theme back button --- */
+.page-title-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.page-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0b2b2d;
+}
+
+/* Back button styled to match theme (dark green circle with white icon) */
+.page-back-button {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #093433;
+    color: #fff;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 6px 14px rgba(3,28,28,0.12);
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.page-back-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(3,28,28,0.16);
+}
+
+.page-back-button:focus {
+    outline: 3px solid rgba(9,52,51,0.12);
+}
+
+/* small screens adjust spacing */
+@media (max-width: 480px) {
+    .page-title { font-size: 1.05rem; margin-left: 8px; }
+    .page-back-button { width: 40px; height: 40px; font-size: 1rem; }
+}
+
+/* Save button hover/interaction improvements */
+.btn-save,
+.btn-save-desktop {
+    cursor: pointer;
+    transition: transform 160ms cubic-bezier(.2,.8,.2,1),
+                box-shadow 160ms cubic-bezier(.2,.8,.2,1),
+                background-color 160ms linear;
+    will-change: transform, box-shadow;
+}
+
+/* Hover — lift, subtle scale and stronger shadow; keep text color unchanged */
+.btn-save:hover,
+.btn-save-desktop:hover {
+    transform: translateY(-4px) scale(1.02);
+    background-color: #0d5b55; /* slightly brighter/tinted green */
+    box-shadow: 0 12px 28px rgba(9,52,51,0.22);
+    color: #fff; /* ensure text color remains white on hover */
+}
+
+/* Active / pressed — quick depressed feedback; keep text color unchanged */
+.btn-save:active,
+.btn-save-desktop:active {
+    transform: translateY(0) scale(0.995);
+    box-shadow: 0 6px 14px rgba(9,52,51,0.14);
+    color: #fff;
+}
+
+/* Keyboard focus visible state for accessibility; keep text color unchanged */
+.btn-save:focus-visible,
+.btn-save-desktop:focus-visible {
+    outline: 3px solid rgba(9,52,51,0.12);
+    outline-offset: 2px;
+    color: #fff;
+}
