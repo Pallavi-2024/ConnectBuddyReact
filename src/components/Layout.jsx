@@ -13,8 +13,7 @@ const Layout = () => {
           <div className="col-md-3">
             <Sidebar />
           </div>
-
-          {/* Main Content */}
+                    {/* Main Content */}
           <div className="col-md-9">
             <Topbar />
 
