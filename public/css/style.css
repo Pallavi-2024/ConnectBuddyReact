@@ -1011,9 +1011,9 @@ img {
 .dashboard-card {
     background: white;
     border-radius: 16px;
-    padding: 24px;
+    padding: 20px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 .dashboard-card-header {

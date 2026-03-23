@@ -113,3 +113,6 @@ code {
   background: var(--code-bg);
 }
 
+h4{
+  margin-bottom: 2px;
+}

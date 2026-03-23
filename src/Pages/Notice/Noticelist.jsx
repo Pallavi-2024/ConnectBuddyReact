@@ -22,7 +22,7 @@ const NoticeList = () => {
         <div className="row">
           <div className="col-12 d-flex justify-content-between align-items-center">
             <div>
-              <h3>Notice Master</h3>
+              <h4>Notice Master</h4>
               <p className="text-muted">
                 Total: <span>{notices.length}</span>
               </p>
@@ -60,7 +60,7 @@ const NoticeList = () => {
                       ))
                     ) : (
                       <tr>
-                        <td colSpan="6" className="text-center text-muted py-3">
+                        <td colSpan="6" className="text-center text-muted">
                           No Notices found. Click the + button to add one.
                         </td>
                       </tr>
