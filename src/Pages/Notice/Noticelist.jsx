@@ -35,7 +35,7 @@ const NoticeList = () => {
           <div className="col-12">
             <div className="dashboard-card">
               <div className="table-responsive">
-                <table className="table table-sm table-striped mb-0 align-middle">
+                <table className="table table-sm mb-0 align-middle custom-table text-start">
                   <thead>
                     <tr>
                       <th>Title</th>
