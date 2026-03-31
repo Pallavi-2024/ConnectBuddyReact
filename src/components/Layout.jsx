@@ -6,6 +6,7 @@ import NoticeList from "../Pages/Notice/Noticelist";
 import AchievementList from "../Pages/Achievement/Achievementlist"
 import Login from "../Login";
 import Jobs from "../Pages/Job/jobs";
+import Joblist from "../Pages/Job/Joblist";
 
 const Layout = () => {
   return (
@@ -26,6 +27,7 @@ const Layout = () => {
                 <Route path="/achievements" element={<AchievementList />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/jobs" element={<Jobs />} />
+                <Route path="/joblist" element={<Joblist />} />
               </Routes>
             </div>
           </div>

@@ -4,6 +4,7 @@ import React from 'react'
 import axios from 'axios'
 
 axios.defaults.baseURL = 'https://localhost:7022/api/';
+// axios.defaults.baseURL = 'http://uniqtech-001-site37.ntempurl.com/api/';
 import './index.css'
 import Layout from "./components/Layout";
 // import 'bootstrap/dist/css/bootstrap.min.css';

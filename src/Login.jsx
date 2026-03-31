@@ -1,13 +1,31 @@
 import React, { useState } from "react";
 import "../public/css/login.css";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
     const [loginMethod, setLoginMethod] = useState("password");
     const [showPassword, setShowPassword] = useState(false);
+    const [credentials, setCredentials] = useState({ email: "", password: "" });
+    const navigate = useNavigate();
 
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
-        console.log("Login");
+        const response = await axios.post("/Register/Login", {
+            email: credentials.email,
+            password: credentials.password,
+        });
+        const json = response.data;
+        if (json.completed) {
+            navigate("/")
+        } else {
+            alert("Invalid Credentials")
+        }
+
+        console.log(json);
+    }
+
+    const onChange = (e) => {
+        setCredentials({ ...credentials, [e.target.name]: e.target.value });
     }
 
     return (
@@ -20,11 +38,12 @@ const Login = () => {
                             <h2>Login</h2>
                             <form onSubmit={handleLogin}>
                                 <label>User Id</label>
-                                <input type="email" placeholder="Enter Email Id" required />
+                                <input type="email" name="email" value={credentials.email} onChange={onChange} placeholder="Enter Email Id" required />
                                 <label>Password</label>
                                 <div className="password-box">
                                     <input
                                         type={showPassword ? "text" : "password"}
+                                        name="password" value={credentials.password} onChange={onChange}
                                         placeholder="Enter Password"
                                         required
                                     />
