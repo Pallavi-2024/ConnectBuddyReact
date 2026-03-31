@@ -6,7 +6,7 @@ const NoticeList = () => {
 
   useEffect(() => {
     axios
-      .get("https://localhost:7022/api/Notice/GetNotices?createdBy=1")
+      .get("Notice/GetNotices?createdBy=1")
       .then((res) => {
         console.log("API Response:", res.data);
         setNotices(res.data.data);

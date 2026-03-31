@@ -6,7 +6,7 @@ const AchievementList = () => {
 
     useEffect(() => {
         axios
-            .get("https://localhost:7022/api/Achievement/GetAchievements?createdBy=1")
+            .get("Achievement/GetAchievements?createdBy=1")
             .then((res) => {
                 console.log("API Response:", res.data);
                 setAchievements(res.data.data);
@@ -29,8 +29,6 @@ const AchievementList = () => {
                         </div>
                     </div>
                 </div>
-
-                {/* Table */}
                 <div className="row mt-3">
                     <div className="col-12">
                         <div className="dashboard-card">

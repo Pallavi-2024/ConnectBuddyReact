@@ -154,113 +154,121 @@ h4{
         width: 17%;
     }
 }
+.jobs-page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
 
- .jobs-page-wrapper {
-     padding: 60px 0;
-     min-height: calc(100vh - 150px);
- }
+.jobs-glass-container {
+    padding: 40px 0;
+}
 
- .text-orange {
-     color: #E87A3E !important;
- }
+.modern-job-card {
+    position: relative;
+    border-radius: 20px;
+    padding: 40px 25px;
+    text-align: center;
+    transition: all 0.35s ease;
+    overflow: hidden;
+    cursor: pointer;
+}
 
- /* Modern Job Card Styles */
- .modern-job-card {
-     position: relative;
-     overflow: hidden;
-     padding: 40px 30px;
-     border-radius: 30px;
-     text-align: center;
-     cursor: pointer;
-     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-     height: 100%;
-     border: 1px solid transparent;
- }
+/* Card Defaults */
+.post-card, .find-card {
+    background: #ffffff;
+    border: 1px solid #e6eaf0;
+    color: #333;
+}
 
- /* Specific Card Themes */
- .post-card {
-     background: linear-gradient(135deg, #1a3a3a 0%, #288998 100%);
-     color: white;
- }
+/* Glass overlay effect */
+.card-glass-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(6px);
+}
 
- .find-card {
-     background: #ffffff;
-     border: 1px solid #eee;
-     color: #1a3a3a;
-     box-shadow: 0 10px 30px rgba(0,0,0,0.03);
- }
+/* Content */
+.card-content {
+    position: relative;
+    z-index: 2;
+}
 
- /* Hover Effects */
- .modern-job-card:hover {
-     transform: translateY(-15px);
-     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
- }
+/* Icon */
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f4f9;
+}
 
- .post-card:hover {
-     border-color: rgba(255,255,255,0.3);
- }
+.icon-circle i {
+    font-size: 28px;
+    color: #1e3c72;
+    transition: color 0.3s ease;
+}
 
- .find-card:hover {
-     border-color: #E87A3E;
- }
+/* Text */
+.modern-job-card h3 {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
 
- /* Icon Styling */
- .icon-circle {
-     width: 80px;
-     height: 80px;
-     margin: 0 auto 25px;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     border-radius: 50%;
-     font-size: 32px;
-     transition: all 0.3s ease;
- }
+.modern-job-card p {
+    font-size: 14px;
+    opacity: 0.85;
+    margin-bottom: 25px;
+}
 
- .post-card .icon-circle {
-     background: rgba(255, 255, 255, 0.15);
-     color: white;
- }
+/* Button */
+.btn-action {
+    border: none;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background: #1e3c72;
+    color: #fff;
+}
 
- .find-card .icon-circle {
-     background: rgba(232, 122, 62, 0.1);
-     color: #E87A3E;
- }
+/* Hover Effects */
+.modern-job-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    background: linear-gradient(135deg, #1e3c72, #1e3c72);
+    color: white;
+}
 
- /* Content Styling */
- .modern-job-card h3 {
-     font-weight: 700;
-     margin-bottom: 15px;
-     font-size: 1.5rem;
- }
+.modern-job-card:hover .btn-action {
+    background: #ffffff;
+    color: #1e3c72;
+}
 
- .modern-job-card p {
-     font-size: 0.95rem;
-     opacity: 0.8;
-     margin-bottom: 25px;
- }
+.modern-job-card:hover .icon-circle i {
+    color: #1e3c72;
+}
 
- .btn-action {
-     font-weight: 600;
-     text-transform: uppercase;
-     letter-spacing: 1px;
-     font-size: 0.8rem;
-     display: inline-block;
-     padding: 8px 20px;
-     border-radius: 50px;
-     transition: all 0.3s ease;
- }
+.btn-action:hover {
+    transform: translateX(5px);
+}
 
- .post-card .btn-action {
-     background: rgba(255,255,255,0.1);
-     color: white;
- }
+.modern-job-card {
+    animation: fadeUp 0.6s ease;
+}
 
- .find-card .btn-action {
-     background: #1a3a3a;
-     color: white;
- }
-
- .modern-job-card:hover .btn-action {
-     padding-right: 30px;
- }
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -3,26 +3,12 @@ import "../public/css/login.css";
 
 const Login = () => {
     const [loginMethod, setLoginMethod] = useState("password");
-    const [showOtpBox, setShowOtpBox] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
 
-    const toggleLoginMethod = (method) => {
-        setLoginMethod(method);
-        setShowOtpBox(false);
-    };
-
-    const handleSendOtp = () => {
-        setShowOtpBox(true);
-    };
-
-    const handleSubmit = (e) => {
+    const handleLogin = (e) => {
         e.preventDefault();
-        if (loginMethod === "password") {
-            console.log("Login with password");
-        } else {
-            console.log("Login with OTP");
-        }
-    };
+        console.log("Login");
+    }
 
     return (
         <div className="login-page">
@@ -32,73 +18,28 @@ const Login = () => {
                         <div className="login-card">
                             <img src="/images/logo.png" alt="logo" className="login-logo" />
                             <h2>Login</h2>
-                            <form>
+                            <form onSubmit={handleLogin}>
                                 <label>User Id</label>
                                 <input type="email" placeholder="Enter Email Id" required />
-                                <div className="login-method mt-3 mb-3">
-                                    <label className="me-3">
-                                        <input className="radioinput"
-                                            type="radio"
-                                            checked={loginMethod === "password"}
-                                            onChange={() => toggleLoginMethod("password")}
-                                        />
-                                        Login with Password
-                                    </label>
-                                    <label>
-                                        <input className="radioinput"
-                                            type="radio"
-                                            checked={loginMethod === "otp"}
-                                            onChange={() => toggleLoginMethod("otp")}
-                                        />
-                                        Login with OTP
-                                    </label>
+                                <label>Password</label>
+                                <div className="password-box">
+                                    <input
+                                        type={showPassword ? "text" : "password"}
+                                        placeholder="Enter Password"
+                                        required
+                                    />
+                                    <span onClick={() => setShowPassword(!showPassword)}>
+                                        👁
+                                    </span>
                                 </div>
-                                {loginMethod === "password" && (
-                                    <>
-                                        <label>Password</label>
-                                        <div className="password-box">
-                                            <input
-                                                type={showPassword ? "text" : "password"}
-                                                placeholder="Enter Password"
-                                                required
-                                            />
-                                            <span onClick={() => setShowPassword(!showPassword)}>
-                                                👁
-                                            </span>
-                                        </div>
-                                        <div className="options">
-                                            <label>
-                                                <input type="checkbox" className="checkbox" /> Remember Me
-                                            </label>
-                                            <a href="#">Forgot Password?</a>
-                                        </div>
-                                        <button className="btn-login">Login</button>
-                                    </>
-                                )}
-                                {loginMethod === "otp" && (
-                                    <>
-                                        {!showOtpBox ? (
-                                            <button
-                                                type="button"
-                                                className="btn-login"
-                                                onClick={handleSendOtp}
-                                            >
-                                                Send OTP
-                                            </button>
-                                        ) : (
-                                            <>
-                                                <div className="otp-box">
-                                                    {[...Array(6)].map((_, i) => (
-                                                        <input key={i} maxLength="1" />
-                                                    ))}
-                                                </div>
-                                                <button className="btn-login">
-                                                    Verify OTP
-                                                </button>
-                                            </>
-                                        )}
-                                    </>
-                                )}
+                                <div className="options">
+                                    <label>
+                                        <input type="checkbox" className="checkbox" /> Remember Me
+                                    </label>
+                                    <a href="#">Forgot Password?</a>
+                                </div>
+                                <button className="btn-login">Login</button>
+
                             </form>
                             <div className="divider">or signup with</div>
                             <div className="social-login">
