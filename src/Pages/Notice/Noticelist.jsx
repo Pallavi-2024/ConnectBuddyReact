@@ -1,19 +1,38 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { getUserId } from "../../utils/session";
+import { getNotices } from "../../api/noticeApi";
+
 
 const NoticeList = () => {
   const [notices, setNotices] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("Notice/GetNotices?createdBy=1")
+
+    const userId = getUserId();
+    if (!userId) {
+      console.log("User ID not found");
+      return;
+    }
+
+    getNotices(userId)
       .then((res) => {
         console.log("API Response:", res.data);
         setNotices(res.data.data);
       })
       .catch((err) => {
-        console.error("API Error:", err);
+        console.log("API Error:", err);
       });
+
+    // axios
+    //   .get("Notice/GetNotices?createdBy=1")
+    //   .then((res) => {
+    //     console.log("API Response:", res.data);
+    //     setNotices(res.data.data);
+    //   })
+    //   .catch((err) => {
+    //     console.error("API Error:", err);
+    //   });
   }, []);
   return (
     <div className="main-content-outer">

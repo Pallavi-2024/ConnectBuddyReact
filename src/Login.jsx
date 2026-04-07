@@ -1,28 +1,63 @@
 import React, { useState } from "react";
 import "../public/css/login.css";
 import { useNavigate } from "react-router-dom";
+import { loginUser } from "./api/authApi";
 
 const Login = () => {
-    const [loginMethod, setLoginMethod] = useState("password");
+    // const [loginMethod, setLoginMethod] = useState("password");
+    // const [showPassword, setShowPassword] = useState(false);
+    // const [credentials, setCredentials] = useState({ email: "", password: "" });
+    // const navigate = useNavigate();
+
+    // const handleLogin = async (e) => {
+    //     e.preventDefault();
+    //     const response = await axios.post("/Register/Login", {
+    //         email: credentials.email,
+    //         password: credentials.password,
+    //     });
+    //     const json = response.data;
+    //     if (json.completed) {
+    //         navigate("/")
+    //     } else {
+    //         alert("Invalid Credentials")
+    //     }
+
+    //     console.log(json);
+    // }
     const [showPassword, setShowPassword] = useState(false);
     const [credentials, setCredentials] = useState({ email: "", password: "" });
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        const response = await axios.post("/Register/Login", {
-            email: credentials.email,
-            password: credentials.password,
-        });
-        const json = response.data;
-        if (json.completed) {
-            navigate("/")
-        } else {
-            alert("Invalid Credentials")
-        }
+        setLoading(true);
 
-        console.log(json);
-    }
+        try {
+            const response = await loginUser({
+                email: credentials.email,
+                password: credentials.password,
+            });
+
+            const json = response.data;
+
+            if (json.completed) {
+                sessionStorage.setItem("user", JSON.stringify(json.data));
+                sessionStorage.setItem("isLogin", "true");
+
+                navigate("/");
+            } else {
+                alert("Invalid Credentials");
+            }
+
+        } catch (error) {
+            console.error("Login Error:", error);
+            alert("Something went wrong");
+        } finally {
+            setLoading(false);
+        }
+    };
+
 
     const onChange = (e) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value });
