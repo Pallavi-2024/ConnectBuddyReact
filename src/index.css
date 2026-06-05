@@ -33,7 +33,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --text: #9ca3af;
-    --text-h: #f3f4f6;
+    --text-h: #0c0e11;
     --bg: #16171d;
     --border: #2e303a;
     --code-bg: #1f2028;
@@ -341,8 +341,8 @@ h4{
 }
 
 .job-logo {
-    width: 40px;
-    height: 40px;
+    width: 56px;
+    height: 56px;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -480,5 +480,157 @@ h4{
 }
 .text-muted {
     --bs-text-opacity: 1;
-    color: rgb(240 243 247) !important;
+    color: rgb(8, 9, 10) !important;
+}
+
+textarea.form-control {
+    min-height: 120px;
+}
+
+.job-card {
+    border-radius: 20px;
+}
+.btn-primary{
+    background-color: #1e3c72;
+}
+.btn-primary:hover{
+    background-color: #1e3c72;
+}
+
+/* Core Card adjustments */
+.job-card {
+    position: relative; /* REQUIRED for absolute positioning of child elements */
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid #e7edf3;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    min-height: 260px;
+}
+
+.job-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+/* --- HOVER ACTIONS ENGINE --- */
+.card-actions {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    
+    /* Hide by default */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+    z-index: 10;
+}
+
+/* Reveal actions container immediately upon hovering the card parent */
+.job-card:hover .card-actions {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Edit Pencil Customization */
+.edit-btn {
+    border: none;
+    background: transparent;
+    color: #475569;
+    font-size: 20px;
+    padding: 0;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+
+.edit-btn:hover {
+    color: #1e3c72;
+}
+
+/* Fix Bootstrap Switch Margin Reset inside actions wrapper */
+.card-actions .form-switch .form-check-input {
+    width: 2.5em;
+    height: 1.25em;
+}
+
+/* --- VISUAL STYLING MAP --- */
+.job-logo-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: #fce7f3; /* Light pink background from image 2 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.job-logo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.job-content-details {
+    flex-grow: 1;
+    margin-bottom: 16px;
+}
+
+.job-title-new {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.job-text-item {
+    font-size: 0.95rem;
+    color: #475569;
+    margin-bottom: 4px;
+}
+
+.text-muted-custom {
+    color: #94a3b8;
+}
+
+/* Footer layout rules */
+.job-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 16px;
+    margin-top: auto;
+}
+
+.time-badge {
+    background: #ffedd5;
+    color: #ea580c;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+.candidate-btn {
+    border: none;
+    background: transparent;
+    color: #1e3c72;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0;
+}
+
+.candidate-btn:hover {
+    text-decoration: underline;
 }

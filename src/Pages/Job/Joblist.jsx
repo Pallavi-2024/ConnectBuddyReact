@@ -1,29 +1,39 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { getJobs } from "../../api/jobApi";
 
 
 const Joblist = () => {
     const navigate = useNavigate();
-    const [searchTerm, setSearchTerm] = useState("");
+
     const [job, setJobs] = useState([]);
-    // Pagination logic
+    const [searchTerm, setSearchTerm] = useState("");
+
+    // Pagination
     const [currentPage, setCurrentPage] = useState(1);
-    const [hasMore, setHasMore] = useState(true);
     const pageSize = 10;
+    const [hasMore, setHasMore] = useState(true);
+
 
     useEffect(() => {
-        axios
-            .get(`Job/GetJobs?page=${currentPage}&pageSize=${pageSize}`)
+        loadJobs();
+    }, [currentPage]);
+
+    const loadJobs = () => {
+        getJobs(currentPage, pageSize)
             .then((res) => {
-                const jobsArray = Array.isArray(res.data) ? res.data : (res.data.data || res.data.items || []);
+                const jobsArray =
+                    res.data?.data ||
+                    res.data?.items ||
+                    res.data ||
+                    [];
                 setJobs(jobsArray);
                 setHasMore(jobsArray.length === pageSize);
             })
             .catch((err) => {
                 console.error("API Error:", err);
             });
-    }, [currentPage]);
+    };
 
     const filteredJobs = job.filter(job => {
         const jobTitle = job.title || job.jobTitle || "";
@@ -39,10 +49,34 @@ const Joblist = () => {
         const now = new Date();
 
         const diffTime = now - createdDate;
-        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
 
-        if (diffDays === 0) return "Today";
-        return `${diffDays} Days Ago`;
+        const diffMinutes = Math.floor(diffTime / (1000 * 60));
+        const diffHours = Math.floor(diffTime / (1000 * 60 * 60));
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+        const diffMonths = Math.floor(diffDays / 30);
+        const diffYears = Math.floor(diffDays / 365);
+
+        if (diffMinutes < 1) return "Just now";
+        if (diffMinutes < 60)
+            return `${diffMinutes} minute${diffMinutes > 1 ? "s" : ""} ago`;
+
+        if (diffHours < 24)
+            return `${diffHours} hour${diffHours > 1 ? "s" : ""} ago`;
+
+        if (diffDays === 1) return "Yesterday";
+
+        if (diffDays < 7)
+            return `${diffDays} day${diffDays > 1 ? "s" : ""} ago`;
+
+        if (diffDays < 30) {
+            const weeks = Math.floor(diffDays / 7);
+            return `${weeks} week${weeks > 1 ? "s" : ""} ago`;
+        }
+
+        if (diffDays < 365)
+            return `${diffMonths} month${diffMonths > 1 ? "s" : ""} ago`;
+
+        return `${diffYears} year${diffYears > 1 ? "s" : ""} ago`;
     };
 
     const formatExperience = (exp) => {
@@ -83,8 +117,9 @@ const Joblist = () => {
                 <div className="row g-4 pb-4">
                     {filteredJobs.length > 0 ? (
                         filteredJobs.map((job, index) => (
-                            <div key={job.id || index} className="col-md-4">
-                                <div className="job-list-card">
+                            <div key={job.jobId || index} className="col-md-4">
+                                <div className="job-list-card" onClick={() => { console.log("Job Id:", job.id); navigate(`/jobdetails/${job.jobId}`) }}
+                                    style={{ cursor: "pointer" }} >
                                     <div className="job-card-header">
                                         <div className="job-logo" style={{ backgroundColor: `${job.color || '#45b7d1'}15`, color: job.color || '#45b7d1' }}>
                                             {job.profilePhotoPath ? (

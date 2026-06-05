@@ -1,6 +1,7 @@
-import React from "react";
+import { getUser } from "../utils/session";
 
 const Topbar = () => {
+  const user = getUser();
   return (
     <div className="topbar d-flex justify-content-end align-items-center p-2">
 
@@ -16,9 +17,8 @@ const Topbar = () => {
           height="32"
           alt="user"
         />
-        <span className="fw-semibold small">User Name</span>
+        <span className="fw-semibold small"> {user ? user.firstName + " " + user.lastName : "Guest"}</span>
       </div>
-
     </div>
   );
 };

@@ -1,24 +1,37 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { getAchievements } from "../../api/achievementApi";
+import { getUserId } from "../../utils/session";
 
 const AchievementList = () => {
     const [achievements, setAchievements] = useState([]);
 
     useEffect(() => {
-        axios
-            .get("Achievement/GetAchievements?createdBy=1")
+        const userId = getUserId();
+        if (!userId) {
+            console.log("User ID not found");
+            return;
+        }
+
+        getAchievements(userId)
             .then((res) => {
-                console.log("API Response:", res.data);
                 setAchievements(res.data.data);
             })
             .catch((err) => {
-                console.error("API Error:", err);
+                console.log("API Error:", err);
             });
+        // axios
+        //     .get("Achievement/GetAchievements?createdBy=1")
+        //     .then((res) => {
+        //         console.log("API Response:", res.data);
+        //         setAchievements(res.data.data);
+        //     })
+        //     .catch((err) => {
+        //         console.error("API Error:", err);
+        //     });
     }, []);
     return (
         <div className="main-content-outer">
             <div className="container">
-                {/* Header */}
                 <div className="row">
                     <div className="col-12 d-flex justify-content-between align-items-center">
                         <div>

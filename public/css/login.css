@@ -1,7 +1,16 @@
 .login-page {
   font-family: 'Jost', sans-serif;
+  min-height: 100vh;
   padding: 20px 0;
-  background: linear-gradient(90.19deg, rgba(224, 135, 65, 0.55) 0.17%, rgba(224, 135, 65, 0.2) 74.31%, rgba(224, 135, 65, 0.1) 86.67%, rgba(224, 135, 65, 0) 99.03%);
+  background: linear-gradient(
+      90.19deg,
+      rgba(224, 135, 65, 0.55) 0.17%,
+      rgba(224, 135, 65, 0.2) 74.31%,
+      rgba(224, 135, 65, 0.1) 86.67%,
+      rgba(224, 135, 65, 0) 99.03%
+  );
+  display: flex;
+  align-items: center;
 }
 
 .login-card {

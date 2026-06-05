@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Jobs = () => {
@@ -10,7 +9,7 @@ const Jobs = () => {
                 <div className="jobs-glass-container">
                     <div className="row g-4 justify-content-center">
                         <div className="col-md-5 col-lg-4">
-                            <div className="modern-job-card post-card">
+                            <div className="modern-job-card post-card" onClick={() => navigate('/postedlist')}>
                                 <div className="card-glass-overlay"></div>
                                 <div className="card-content">
                                     <div className="icon-circle">
@@ -23,8 +22,8 @@ const Jobs = () => {
                             </div>
                         </div>
                         <div className="col-md-5 col-lg-4">
-                            <div 
-                                className="modern-job-card find-card" 
+                            <div
+                                className="modern-job-card find-card"
                                 onClick={() => navigate('/joblist')}
                             >
                                 <div className="card-glass-overlay"></div>

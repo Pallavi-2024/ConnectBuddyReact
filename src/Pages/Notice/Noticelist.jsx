@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { getUserId } from "../../utils/session";
 import { getNotices } from "../../api/noticeApi";
 
@@ -17,7 +16,6 @@ const NoticeList = () => {
 
     getNotices(userId)
       .then((res) => {
-        console.log("API Response:", res.data);
         setNotices(res.data.data);
       })
       .catch((err) => {
@@ -49,7 +47,6 @@ const NoticeList = () => {
           </div>
         </div>
 
-        {/* Table */}
         <div className="row mt-3">
           <div className="col-12">
             <div className="dashboard-card">

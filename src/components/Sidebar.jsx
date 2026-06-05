@@ -11,7 +11,7 @@ const Sidebar = () => {
 
       <ul className="nav flex-column">
         <li className="nav-item">
-          <span className="nav-link">Dashboard</span>
+          <NavLink to="/dashboard" className="nav-link">Dashboard</NavLink>
         </li>
 
         <li className="nav-item">
