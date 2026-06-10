@@ -3,7 +3,7 @@ import { getUser } from "../utils/session";
 const Topbar = () => {
   const user = getUser();
   return (
-    <div className="topbar d-flex justify-content-end align-items-center p-2">
+    <div className="topbar d-none d-md-flex justify-content-end align-items-center p-2">
 
       {/* Notification */}
       <img src="/images/noti.png" alt="Notifications" width="25" />

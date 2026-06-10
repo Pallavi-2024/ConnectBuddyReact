@@ -5,7 +5,7 @@ const Dashboard = () => {
 
     return (
 
-        <div className="container">
+        <div className="container mt-4">
             <div className="row">
                 <div className="col-md-12">
                     <h2 className="mb-3" style={{ float: "inline-start" }}>Welcome, {user.firstName} {user.lastName}</h2>

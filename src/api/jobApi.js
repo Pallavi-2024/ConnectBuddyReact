@@ -38,7 +38,7 @@ export const UpdateJob = async (jobData) => {
     );
 };
 export const getInterestedCandidates = (id) => {
-    return API.get(`Job/InterestedCandidates?id=${id}`);
+    return API.get(`Job/InterestedCandidates?jobId=${id}`);
 };
 
 export const applyJob = async (jobId, currentUserId) => {

@@ -119,7 +119,7 @@ const Postedlist = () => {
                 </div>
                 <div className="job-filter-bar mb-4">
                     <div className="row g-3 align-items-center">
-                        <div className="col-md-8 col-lg-7">
+                        <div className="col-md-8 col-lg-6">
                             <div className="search-input-group ps-4 pe-2 py-2 bg-white rounded-5 border d-flex align-items-center shadow-sm">
                                 <i className="bi bi-search text-secondary me-2"></i>
                                 <input
@@ -128,7 +128,7 @@ const Postedlist = () => {
                                     style={{ outline: 'none', background: 'transparent' }}
                                     placeholder="Search by job title or company..."
                                     value={searchTerm}
-                                    onChange={(e) => { setSearchTerm(e.target.value); setCurrentPage(1) }}
+                                    onChange={(e) => setSearchTerm(e.target.value)}
                                 //onKeyDown={(e) => e.key === 'Enter' && handleSearchClick()}
                                 />
                                 <button className="btn btn-primary rounded-5 px-4 py-2 ms-2" style={{ background: '#1e3c72', border: 'none' }}>
@@ -190,14 +190,14 @@ const Postedlist = () => {
                                             {job.jobLocation}
                                         </p>
                                     </div>
-                                    <div className="job-footer">
+                                    <div className="job-footer d-flex flex-wrap justify-content-between align-items-center gap-3">
 
-                                        <span className="time-badge">
+                                        <span className="time-badge text-nowrap">
                                             {getTimeText(job.createdDateTime)}
                                         </span>
 
                                         <button
-                                            className="candidate-btn"
+                                            className="candidate-btn text-nowrap ms-auto"
                                             onClick={() =>
                                                 navigate(`/interestedcandidates/${job.id}`)
                                             }
